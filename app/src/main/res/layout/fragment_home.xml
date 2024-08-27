@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myHomeViewModel"
+            type="org.diary.viewmodel.HomeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/s_002"
+        android:background="@color/newBackground">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/home_no_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s_085"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/s_004"
+                android:background="@color/colorLightBlue"
+                android:gravity="center"
+                android:text="No info"
+                android:textColor="@color/newText"
+                android:textSize="@dimen/t_022"
+                android:visibility="invisible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                app:adapter="@{myHomeViewModel.homeAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_home" />
+
+        </FrameLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="@{() -> myHomeViewModel.addCategory()}"
+            app:srcCompat="@android:drawable/ic_input_add"
+            app:backgroundTint="@color/newBluePressed"
+            android:foreground="@drawable/ic_add2"
+            />
+    </RelativeLayout>
+</layout>
+

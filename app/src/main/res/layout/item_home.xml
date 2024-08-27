@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="xmlItemViewModel"
+            type="org.diary.viewmodel.BookViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_080"
+        android:layout_marginLeft="@dimen/s_004"
+        android:layout_marginTop="@dimen/s_003"
+        android:layout_marginRight="@dimen/s_004"
+        android:layout_marginBottom="@dimen/s_003"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/view_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/s_004"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_gray"
+            android:gravity="center"
+            android:onClick="@{() -> xmlItemViewModel.clickLeftLayout()}">
+
+            <ImageView
+                android:id="@+id/item_home_image_left"
+                android:layout_width="@dimen/s_030"
+                android:layout_height="@dimen/s_030"
+                android:layout_gravity="center"
+                android:background="@{xmlItemViewModel.getLeftIcon()}"
+                android:gravity="center"
+                android:onClick="@{() -> xmlItemViewModel.clickLeftLayout()}"
+                android:scaleType="fitXY" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/list_item_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/s_004"
+            android:layout_weight="6"
+            android:background="@drawable/rectangle_gray"
+            android:longClickable="true"
+            android:orientation="horizontal">
+
+            <!-- Name-->
+            <FrameLayout
+                android:id="@+id/item_home_frame_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/s_010"
+                android:layout_weight="6"
+                android:gravity="center_vertical|left">
+
+                <TextView
+                    android:id="@+id/item_home_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_010"
+                    android:gravity="center_vertical|left"
+                    android:onLongClick="@{() -> xmlItemViewModel.selectName()}"
+                    android:text="@{xmlItemViewModel.name}"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_026" />
+
+                <!-- Button Up-->
+                <LinearLayout
+                    android:id="@+id/item_home_layout_up"
+                    android:layout_width="@dimen/s_070"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|right"
+                    android:gravity="center_vertical|right"
+                    android:layout_marginRight="@dimen/s_060"
+                    android:onClick="@{() -> xmlItemViewModel.clickUp()}"
+                    android:scaleType="fitXY"
+                    android:visibility="@{xmlItemViewModel.arrowsVisibility()}"
+                    >
+
+                    <ImageView
+                        android:id="@+id/item_home_image_up"
+                        android:layout_width="@dimen/s_040"
+                        android:layout_height="@dimen/s_040"
+                        android:layout_gravity="center_vertical|right"
+                        android:background="@drawable/ic_expand_no"
+                        android:gravity="center_vertical|right"
+                        android:onClick="@{() -> xmlItemViewModel.clickUp()}"
+                        android:scaleType="fitXY"
+                        android:visibility="@{xmlItemViewModel.arrowsVisibility()}"
+                        />
+                </LinearLayout>
+<!--                android:visibility="@{xmlItemViewModel.upVisibility()}" />-->
+
+                <!-- Button Down-->
+                <LinearLayout
+                    android:id="@+id/item_home_layout_down"
+                    android:layout_width="@dimen/s_070"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|right"
+                    android:gravity="center_vertical|right"
+                    android:onClick="@{() -> xmlItemViewModel.clickDown()}"
+                    android:scaleType="fitXY"
+                    android:visibility="@{xmlItemViewModel.arrowsVisibility()}"
+                    >
+
+                    <ImageView
+                        android:id="@+id/item_home_image_down"
+                        android:layout_width="@dimen/s_040"
+                        android:layout_height="@dimen/s_040"
+                        android:layout_gravity="center_vertical|right"
+                        android:background="@drawable/ic_expand_yes"
+                        android:gravity="center_vertical|right"
+                        android:onClick="@{() -> xmlItemViewModel.clickDown()}"
+                        android:scaleType="fitXY"
+                        android:visibility="@{xmlItemViewModel.arrowsVisibility()}"
+                        />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- CheckBox-->
+            <CheckBox
+                android:id="@+id/item_home_check"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|right"
+                android:buttonTint="@{xmlItemViewModel.getButtonTint()}"
+                android:checked="@{xmlItemViewModel.getChecked()}"
+                android:gravity="center_vertical|right"
+                android:onClick="@{() -> xmlItemViewModel.checkChanged()}"
+                android:visibility="@{xmlItemViewModel.checkVisibility()}" />
+            <!--            android:foregroundTint="@{xmlItemViewModel.getForegroundTint()}"-->
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/view_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/s_004"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_gray"
+            android:gravity="center"
+            android:onClick="@{() -> xmlItemViewModel.clickRightLayout()}">
+
+            <ImageView
+                android:id="@+id/item_home_image_right"
+                android:layout_width="@dimen/s_060"
+                android:layout_height="@dimen/s_060"
+                android:layout_gravity="center"
+                android:background="@{xmlItemViewModel.getRightIcon()}"
+                android:gravity="center"
+                android:onClick="@{() -> xmlItemViewModel.clickRightLayout()}"
+                android:scaleType="fitXY" />
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>

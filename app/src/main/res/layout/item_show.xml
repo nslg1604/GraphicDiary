@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="xmlShowItemViewModel"
+            type="org.diary.viewmodel.ShowItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item_show_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_040"
+        android:layout_marginLeft="@dimen/s_020"
+        android:layout_marginRight="@dimen/s_020"
+        android:layout_marginTop="@dimen/s_003"
+        android:layout_marginBottom="@dimen/s_003"
+        android:orientation="horizontal"
+        android:background="@color/colorLight3Gray"
+        >
+<!--        android:background="@drawable/rectangle_gray"-->
+
+        <TextView
+            android:id="@+id/item_show_date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/t_020"
+            android:text="@{xmlShowItemViewModel.day}"
+            />
+
+        <TextView
+            android:id="@+id/item_show_value"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/t_020"
+            android:text="@{xmlShowItemViewModel.value}"
+            />
+
+    </LinearLayout>
+</layout>

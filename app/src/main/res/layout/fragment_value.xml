@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="xmlValueViewModel"
+            type="org.diary.viewmodel.ValueViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/value_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/s_006"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/value_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s_020"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@{xmlValueViewModel.addTitle()}"
+            android:textColor="@color/newText"
+            android:textSize="@dimen/t_036" />
+
+        <EditText
+            android:id="@+id/value_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/s_010"
+            android:layout_marginRight="@dimen/s_010"
+            android:layout_marginTop="@dimen/s_020"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:textColor="@color/newText"
+            android:textSize="@dimen/t_030"
+            android:background="@drawable/rectangle_edit"
+            android:singleLine="true"
+            android:imeOptions="actionDone|actionSend|actionGo"
+            android:text="@={xmlValueViewModel.myText}"
+            android:onEditorAction="@{(view,actionId,event) -> xmlValueViewModel.onEditorAction(view,actionId,event)}"
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/s_010"
+        android:layout_marginRight="@dimen/s_010"
+        android:layout_marginTop="@dimen/s_016"
+        android:orientation="horizontal"
+        >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/value_ready"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/s_070"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/button_blue"
+            android:onClick="@{() -> xmlValueViewModel.clickReady()}"
+            android:text="@{xmlValueViewModel.setTextReady()}"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/t_026" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+<!--        <Button-->
+<!--            android:id="@+id/value_cancel"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="@dimen/s_070"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:gravity="center"-->
+<!--            android:background="@drawable/button_blue"-->
+<!--            android:onClick="@{() -> xmlValueViewModel.clickCancel()}"-->
+<!--            android:text="@{xmlValueViewModel.setTextCancel()}"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:textSize="@dimen/t_026" />-->
+    </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_020"
+        android:layout_centerHorizontal="true"
+        android:calendarViewShown="false"
+        android:spinnersShown="true" />
+
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_026"
+        android:layout_below="@+id/datePicker"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonOk"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/s_060"
+            android:layout_margin="@dimen/s_008"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="@dimen/t_018"
+            android:background="@drawable/button_blue"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkGray"
+            android:text="Ok" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/s_060"
+            android:layout_margin="@dimen/s_008"
+            android:layout_weight="1"
+            android:textSize="@dimen/t_018"
+            android:layout_gravity="center"
+            android:background="@drawable/button_blue"
+            android:textAllCaps="false"
+            android:textColor="@color/colorDarkGray"
+            android:text="Cancel" />
+
+
+    </LinearLayout>
+
+    <!--<Button-->
+    <!--android:id="@+id/button2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/numberPicker1"-->
+    <!--android:layout_marginLeft="20dp"-->
+    <!--android:layout_marginTop="98dp"-->
+    <!--android:layout_toRightOf="@+id/numberPicker1"-->
+    <!--android:text="Cancel" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/button1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBaseline="@+id/button2"-->
+    <!--android:layout_alignBottom="@+id/button2"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:layout_toLeftOf="@+id/numberPicker1"-->
+    <!--android:text="Set" />-->
+
+</RelativeLayout>

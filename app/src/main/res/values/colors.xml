@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorBackgroundOperator">#CFD3D6</color>
+    <color name="colorTitle">#FFFFFF</color>
+    <color name="colorText">#000000</color>
+    <color name="colorTextGreen">#028102</color>
+    <color name="colorTextLightGreen">#02FF02</color>
+    <color name="colorEditText">#4C4C4C</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlackBlack">#000000</color>
+    <color name="colorBlack">#222222</color>
+    <color name="colorBlack2">#3D4143</color>
+    <color name="colorDarkGray">#545454</color>
+    <color name="colorGray">#828282</color>
+    <color name="colorLightGray">#C2C2C2</color>
+    <color name="colorLightLightGray">#E2E2E2</color>
+    <color name="colorLight3Gray">#F2F2F2</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorGreen">#028102</color>
+    <color name="colorYellow">#FE9574</color>
+    <color name="colorDarkBlue2">#2D6FF4</color>
+    <color name="colorDarkBlue">#70A4C8</color>
+    <color name="colorLightBlue">#CADCE8</color>
+    <color name="colorLogoBlue">#11387A</color>
+    <color name="colorBackRed">#FE8574</color>
+    <color name="colorLightGreen">#DAFF7F</color>
+    <color name="colorLightGreen2">#40CF40</color>
+
+    <color name="colorMainMenuEmptyCell">#FFFFFF</color>
+    <color name="colorMainMenuUsedCell">#FFFFFF</color>
+    <color name="colorMainMenuBackground">#FFFFFF</color>
+
+    <color name="colorSysPswBkg">#CCCCCC</color>
+    <color name="colorKeyboardBkg">#CCCCCC</color>
+    <color name="colorKeyboardText">#222222</color>
+
+    <color name="colorOpConfirmGray">#CADCE8</color>
+    <color name="colorOpConfirmBlue">#6DCFF6</color>
+    <color name="colorOpConfirmRed">#FE8574</color>
+    <color name="colorOpConfirmEdit">#96D9C8</color>
+    <color name="colorOpConfirmGreen">#B1DD7E</color>
+
+    <color name="colorSearchCell">#CADCE8</color>
+
+    <color name="editTextBkgWrong">#ECCCCC</color>
+    <color name="editTextBkgValid">#CCE4CC</color>
+
+
+    <color name="newBackground">#F3F4FA</color>
+    <color name="newBackgroundDark">#66F3F4FA</color>
+    <color name="newDialogBackground">#F3F4FA</color>
+    <color name="newSecondaryProgress">#BABABA</color>
+    <color name="newText">#2D3D5C</color>
+    <color name="newWhite">#FFFFFF</color>
+    <color name="newGreen">#71B92F</color>
+    <color name="newGray">#617E8C</color>
+    <color name="newGrayLight">#BABABA</color>
+    <color name="newBlue">#0E357E</color>
+    <color name="newYellow">#FFFF00</color>
+    <color name="newBlueShadow">#A0B8FF</color>
+    <color name="newBluePressed">#0F468F</color>
+    <color name="newBluePressed2">#66AAAA</color>
+    <color name="newBluePressed3">#0F579F</color>
+    <color name="newConfirm">#71B92F</color>
+    <color name="newCian">#48B8AC</color>
+    <color name="newCancel">#F04438</color>
+    <color name="newRed">#F04438</color>
+    <color name="newProgressGreen">#71B92F</color>
+    <color name="newProgressCian">#1998A7</color>
+    <color name="newKeyboard">#ECEFF0</color>
+
+    <color name="topBkgSelected">#2D6FF4</color>
+    <color name="topBkgNormal">#CADCE8</color>
+    <color name="bkgSelected">#6DAFF4</color>
+    <color name="bkgNormal">#CADCE8</color>
+    <color name="topTextSelected">#FFFFFF</color>
+    <color name="topTextNormal">#2D3D5C</color>
+
+</resources>

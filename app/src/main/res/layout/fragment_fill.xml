@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="xmlFillViewModel"
+            type="org.diary.viewmodel.FillViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/s_006"
+        android:orientation="horizontal"
+        android:windowSoftInputMode="stateVisible">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:orientation="vertical">
+
+            <!--PARENT-->
+<!--            <TextView-->
+<!--                android:id="@+id/fill_top_title_text"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/s_070"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="@color/colorText"-->
+<!--                android:textSize="@dimen/t_036" />-->
+
+            <LinearLayout
+                android:id="@+id/fill_parent_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s_070"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fill_parent_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlFillViewModel.gotoLeftParent()}"
+                    android:text="&lt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+
+                <TextView
+                    android:id="@+id/fill_parent_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/rectangle_edit"
+                    android:gravity="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_024" />
+
+                <TextView
+                    android:id="@+id/fill_parent_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlFillViewModel.gotoRightParent()}"
+                    android:text="&gt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+            </LinearLayout>
+
+            <!--CHILD-->
+            <LinearLayout
+                android:id="@+id/fill_child_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s_070"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fill_child_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlFillViewModel.gotoLeftChild()}"
+                    android:text="&lt;"
+                    android:textColor="@color/colorText"
+                    android:background="@drawable/rectangle_white"
+                    android:textSize="@dimen/t_030" />
+
+                <TextView
+                    android:id="@+id/fill_child_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/colorText"
+                    android:background="@drawable/rectangle_edit"
+                    android:textSize="@dimen/t_024" />
+<!--                android:text="@{xmlFillViewModel.getBookName()}"-->
+
+                <TextView
+                    android:id="@+id/fill_child_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:text="&gt;"
+                    android:textColor="@color/colorText"
+                    android:onClick="@{() -> xmlFillViewModel.gotoRightChild()}"
+                    android:textSize="@dimen/t_030" />
+
+            </LinearLayout>
+
+            <!-- Date -->
+            <LinearLayout
+                android:id="@+id/fill_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s_070"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fill_date_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:onClick="@{() -> xmlFillViewModel.gotoLeftDate()}"
+                    android:text="&lt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+
+                <TextView
+                    android:id="@+id/fill_date_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/rectangle_edit"
+                    android:textColor="@color/colorText"
+                    android:text="@{xmlFillViewModel.getDate()}"
+                    android:textSize="@dimen/t_024" />
+                <!--            android:text="@{xmlFillViewModel.getDate()}"-->
+
+                <TextView
+                    android:id="@+id/fill_date_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:text="&gt;"
+                    android:textColor="@color/colorText"
+                    android:onClick="@{() -> xmlFillViewModel.gotoRightDate()}"
+                    android:textSize="@dimen/t_030" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/fill_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s_070"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:layout_gravity="center"
+                android:background="@drawable/rectangle_edit"
+                android:gravity="left"
+                android:imeOptions="actionDone|actionSend|actionGo"
+                android:onEditorAction="@{(view,actionId,event) -> xmlFillViewModel.onEditorAction(view,actionId,event)}"
+                app:addTextChangedListener="@{xmlFillViewModel.myTextWatcher}"
+                android:singleLine="true"
+                android:text="@={xmlFillViewModel.myEditText}"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/t_030"
+                android:inputType="numberSigned|numberDecimal"
+                />
+
+<!--            android:onTextChanged="@{(text, start, before, count) -> xmlFillViewModel.onTextChange(text)}"-->
+
+<!--            <Button-->
+<!--                android:id="@+id/fill_add"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/s_070"-->
+<!--                android:layout_marginTop="@dimen/s_010"-->
+<!--                android:layout_marginBottom="@dimen/s_010"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Add"-->
+<!--                android:textColor="@color/newWhite"-->
+<!--                android:textSize="@dimen/t_026"-->
+<!--                android:background="@drawable/button_blue"-->
+<!--                android:textAllCaps="false"-->
+<!--                />-->
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+</layout>

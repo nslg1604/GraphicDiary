@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="xmlChildViewModel"
+            type="org.diary.viewmodel.ChildViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/s_006"
+        android:orientation="vertical"
+        android:windowSoftInputMode="stateVisible">
+
+        <TextView
+            android:id="@+id/child_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/s_020"
+            android:gravity="center"
+            android:text="@{xmlChildViewModel.addTitle()}"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/t_038" />
+
+        <EditText
+            android:id="@+id/child_edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s_070"
+            android:layout_marginTop="@dimen/s_020"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/s_010"
+            android:layout_marginRight="@dimen/s_010"
+            android:layout_marginBottom="@dimen/s_020"
+            android:background="@drawable/rectangle_edit"
+            android:imeOptions="actionDone|actionSend|actionGo"
+            android:singleLine="true"
+            android:textColor="@color/colorText"
+            android:text="@={xmlChildViewModel.textChild}"
+            android:textSize="@dimen/t_030" />
+<!--        android:onEditorAction="@{(view,actionId,event) -> xmlChildViewModel.onEditorAction(view,actionId,event)}"-->
+<!--        android:onTextChanged="@{(text, start, before, count) -> xmlChildViewModel.onTextChange(text)}"-->
+
+        <!-- Integer, Float or Text -->
+        <LinearLayout
+            android:id="@+id/child_type_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s_070"
+            android:layout_marginTop="@dimen/s_020"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/child_type_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/s_004"
+                android:layout_marginRight="@dimen/s_004"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_edit"
+                android:gravity="center"
+                android:onClick="@{() -> xmlChildViewModel.gotoLeftType()}"
+                android:text="&lt;"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/t_036" />
+
+            <TextView
+                android:id="@+id/child_type_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="6"
+                android:background="@drawable/rectangle_edit"
+                android:gravity="center"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/t_030" />
+<!--            android:text="@{xmlChildViewModel.getType()}"-->
+
+            <TextView
+                android:id="@+id/child_type_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/s_004"
+                android:layout_marginRight="@dimen/s_004"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_edit"
+                android:gravity="center"
+                android:onClick="@{() -> xmlChildViewModel.gotoRightType()}"
+                android:text="&gt;"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/t_036" />
+        </LinearLayout>
+
+        <!--Min, Max-->
+        <LinearLayout
+            android:id="@+id/child_layout_min_max"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s_080"
+            android:layout_marginLeft="@dimen/s_010"
+            android:layout_marginRight="@dimen/s_010"
+            android:layout_marginTop="@dimen/s_020"
+            android:orientation="horizontal">
+
+            <!--Min-->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/child_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|left"
+                    android:gravity="center_vertical|left"
+                    android:text="@{xmlChildViewModel.setTextMin()}"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_024" />
+
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/child_edit_min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/s_010"
+                android:layout_marginRight="@dimen/s_010"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_edit"
+                android:imeOptions="actionDone|actionSend|actionGo"
+                android:singleLine="true"
+                android:text="@={xmlChildViewModel.textMin}"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/t_030"
+                android:inputType="numberSigned|numberDecimal"
+                />
+<!--            android:onEditorAction="@{(view,actionId,event) -> xmlChildViewModel.onEditorActionMin(view,actionId,event)}"-->
+
+
+            <!--Max-->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/child_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|left"
+                    android:gravity="center_vertical|left"
+                    android:text="@{xmlChildViewModel.setTextMax()}"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_024" />
+
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/child_edit_max"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/s_010"
+                android:layout_marginRight="@dimen/s_010"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_edit"
+                android:imeOptions="actionDone|actionSend|actionGo"
+                android:singleLine="true"
+                android:text="@={xmlChildViewModel.textMax}"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/t_030"
+                android:inputType="numberSigned|numberDecimal"
+                />
+<!--            android:onEditorAction="@{(view,actionId,event) -> xmlChildViewModel.onEditorActionMax(view,actionId,event)}"-->
+
+        </LinearLayout>
+
+<!--        <Button-->
+<!--            android:id="@+id/child_ready"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="@dimen/s_070"-->
+<!--            android:layout_marginTop="@dimen/s_020"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:gravity="center"-->
+<!--            android:background="@drawable/button_blue"-->
+<!--            android:onClick="@{() -> xmlChildViewModel.clickReady()}"-->
+<!--            android:paddingLeft="@dimen/s_040"-->
+<!--            android:paddingRight="@dimen/s_040"-->
+<!--            android:text="@{xmlChildViewModel.setTextReady()}"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:textSize="@dimen/t_026" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/s_010"
+            android:layout_marginRight="@dimen/s_010"
+            android:layout_marginTop="@dimen/s_016"
+            android:orientation="horizontal"
+            >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/child_ready"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/s_070"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/button_blue"
+                android:onClick="@{() -> xmlChildViewModel.clickReady()}"
+                android:text="@{xmlChildViewModel.setTextReady()}"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/t_026" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+<!--            <Button-->
+<!--                android:id="@+id/child_cancel"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="@dimen/s_070"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"-->
+<!--                android:background="@drawable/button_blue"-->
+<!--                android:onClick="@{() -> xmlChildViewModel.clickCancel()}"-->
+<!--                android:text="@{xmlChildViewModel.setTextCancel()}"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/colorWhite"-->
+<!--                android:textSize="@dimen/t_026" />-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="xmlMainViewModel"
+            type="org.diary.viewmodel.ActivityMainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/main_layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s_070"
+            >
+
+            <TextView
+                android:id="@+id/main_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/newBluePressed"
+                android:gravity="center"
+                android:text="@{xmlMainViewModel.getTitle()}"
+                android:textAllCaps="false"
+                android:textColor="@color/newWhite"
+                android:textSize="@dimen/t_036" />
+
+            <ImageView
+                android:id="@+id/image_main_menu"
+                android:layout_width="@dimen/s_060"
+                android:layout_height="@dimen/s_060"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/ic_menu_white"
+                android:gravity="right|center_vertical"
+                android:onClick="@{(view) -> xmlMainViewModel.selectMenu(view)}"
+                android:scaleType="center" />
+<!--            android:onClick="@{(view) -> xmlMainViewModel.selectMenu(view)}"-->
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/fragment_container_view"
+                android:name="org.diary.ui.fragments.EmptyFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/main_progress"
+                android:layout_width="@dimen/s_140"
+                android:layout_height="@dimen/s_140"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/s_030"
+                android:gravity="center" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

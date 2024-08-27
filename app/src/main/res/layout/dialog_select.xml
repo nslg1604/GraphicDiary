@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/s_320"
+    android:background="@color/newBackground">
+
+    <LinearLayout
+        android:id="@+id/dialog_select_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_070"
+        android:layout_marginTop="@dimen/s_002"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_select_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="title"
+            android:textColor="@color/newText"
+            android:textSize="@dimen/t_030" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/dialog_select_back"
+                android:layout_width="@dimen/s_060"
+                android:layout_height="@dimen/s_060"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="right|center_vertical"
+                android:layout_marginLeft="@dimen/s_010"
+                android:background="@drawable/ic_back_purple"
+                android:scaleType="fitXY" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/dialog_select_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_060"
+        android:layout_below="@id/dialog_select_layout"
+        android:layout_marginLeft="@dimen/s_010"
+        android:layout_marginRight="@dimen/s_010"
+        android:background="@drawable/button_blue"
+        android:text="edit"
+        android:textColor="@color/newWhite"
+        android:textSize="@dimen/t_026" />
+
+    <Button
+        android:id="@+id/dialog_select_order"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_060"
+        android:layout_below="@id/dialog_select_edit"
+        android:layout_marginLeft="@dimen/s_010"
+        android:layout_marginRight="@dimen/s_010"
+        android:layout_marginTop="@dimen/s_020"
+        android:background="@drawable/button_blue"
+        android:text="edit"
+        android:textColor="@color/newWhite"
+        android:textSize="@dimen/t_026" />
+
+    <Button
+        android:id="@+id/dialog_select_remove"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_060"
+        android:layout_below="@+id/dialog_select_order"
+        android:layout_marginLeft="@dimen/s_010"
+        android:layout_marginRight="@dimen/s_010"
+        android:layout_marginTop="@dimen/s_020"
+        android:background="@drawable/button_blue"
+        android:text="remove"
+        android:textColor="@color/newWhite"
+        android:textSize="@dimen/t_026" />
+
+</RelativeLayout>

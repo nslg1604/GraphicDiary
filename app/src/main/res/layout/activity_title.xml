@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="xmlTitleViewModel"
+            type="org.diary.viewmodel.ActivityTitleViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/newBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s_004"
+                android:layout_marginRight="@dimen/s_004"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@{xmlTitleViewModel.addTitle()}"
+                android:textAllCaps="false"
+                android:textColor="@color/newText"
+                android:textSize="@dimen/t_050" />
+
+            <TextView
+                android:id="@+id/title_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/s_004"
+                android:layout_marginRight="@dimen/s_004"
+                android:layout_marginTop="@dimen/s_020"
+                android:text="@{xmlTitleViewModel.addVersion()}"
+                android:textAllCaps="false"
+                android:textColor="@color/newText"
+                android:textSize="@dimen/t_036"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/s_070"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/s_020"
+            android:background="@drawable/button_blue"
+            android:gravity="center"
+            android:onClick="@{() -> xmlTitleViewModel.clickContinue()}"
+            android:paddingLeft="@dimen/s_040"
+            android:paddingRight="@dimen/s_040"
+            android:text="@{xmlTitleViewModel.setTextButton()}"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/t_026"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="xmlShowViewModel"
+            type="org.diary.viewmodel.ShowViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/s_006"
+        android:layout_marginBottom="@dimen/s_012"
+        android:orientation="horizontal"
+        android:windowSoftInputMode="stateVisible">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!--  Main vertical-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:orientation="vertical">
+
+            <!-- CATEGORY -->
+            <LinearLayout
+                android:id="@+id/show_parent_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_parent_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlShowViewModel.gotoLeftParent()}"
+                    android:text="&lt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+
+                <TextView
+                    android:id="@+id/show_parent_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_024" />
+
+                <TextView
+                    android:id="@+id/show_parent_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlShowViewModel.gotoRightParent()}"
+                    android:text="&gt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+
+            </LinearLayout>
+
+
+            <!-- CHILD -->
+            <LinearLayout
+                android:id="@+id/show_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_title_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlShowViewModel.gotoLeftChild()}"
+                    android:text="&lt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+
+                <TextView
+                    android:id="@+id/show_title_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_024" />
+
+                <TextView
+                    android:id="@+id/show_title_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlShowViewModel.gotoRightChild()}"
+                    android:text="&gt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+
+            </LinearLayout>
+
+            <!-- Period -->
+            <LinearLayout
+                android:id="@+id/show_step_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_step_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlShowViewModel.gotoLeftStep()}"
+                    android:text="&lt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+
+                <TextView
+                    android:id="@+id/show_step_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_024" />
+
+                <TextView
+                    android:id="@+id/show_step_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlShowViewModel.gotoRightStep()}"
+                    android:text="&gt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+            </LinearLayout>
+
+            <!-- genre -->
+            <LinearLayout
+                android:id="@+id/show_genre_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_genre_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlShowViewModel.gotoLeftGenre()}"
+                    android:text="&lt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+
+                <TextView
+                    android:id="@+id/show_genre_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_024" />
+
+                <TextView
+                    android:id="@+id/show_genre_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/s_004"
+                    android:layout_marginRight="@dimen/s_004"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_white"
+                    android:gravity="center"
+                    android:onClick="@{() -> xmlShowViewModel.gotoRightGenre()}"
+                    android:text="&gt;"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/t_030" />
+            </LinearLayout>
+
+
+            <!-- Type icons -->
+            <LinearLayout
+                android:id="@+id/show_layout_type"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_marginTop="@dimen/s_010"
+                android:layout_marginBottom="@dimen/s_010"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/show_layout_table"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> xmlShowViewModel.selectedTable()}"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:id="@+id/show_button_table"
+                            android:layout_width="@dimen/s_080"
+                            android:layout_height="@dimen/s_080"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_table"
+                            android:gravity="center"
+                            android:onClick="@{() -> xmlShowViewModel.selectedTable()}"
+                            android:scaleType="center" />
+
+                        <ImageView
+                            android:id="@+id/show_frame_table"
+                            android:layout_width="@dimen/s_090"
+                            android:layout_height="@dimen/s_090"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_frame"
+                            android:gravity="center"
+                            android:scaleType="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Show type icons  -->
+                <LinearLayout
+                    android:id="@+id/show_layout_graph"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> xmlShowViewModel.selectedGraph()}"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:id="@+id/show_button_graph"
+                            android:layout_width="@dimen/s_080"
+                            android:layout_height="@dimen/s_080"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_graph"
+                            android:gravity="center"
+                            android:onClick="@{() -> xmlShowViewModel.selectedGraph()}"
+                            android:scaleType="center" />
+
+                        <ImageView
+                            android:id="@+id/show_frame_graph"
+                            android:layout_width="@dimen/s_090"
+                            android:layout_height="@dimen/s_090"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_frame"
+                            android:gravity="center"
+                            android:scaleType="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/show_layout_rect"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> xmlShowViewModel.selectedRect()}"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:id="@+id/show_button_rect"
+                            android:layout_width="@dimen/s_080"
+                            android:layout_height="@dimen/s_080"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_rect"
+                            android:gravity="center"
+                            android:onClick="@{() -> xmlShowViewModel.selectedRect()}"
+                            android:scaleType="center" />
+
+                        <ImageView
+                            android:id="@+id/show_frame_rect"
+                            android:layout_width="@dimen/s_090"
+                            android:layout_height="@dimen/s_090"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_frame"
+                            android:gravity="center"
+                            android:scaleType="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!-- Data-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/show_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:scrollbars="vertical"
+                        app:adapter="@{xmlShowViewModel.showAdapter}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_show" />
+                </ScrollView>
+
+                <HorizontalScrollView
+                    android:id="@+id/show_scroll_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/show_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/s_010"
+                            android:layout_marginBottom="@dimen/s_010"
+                            android:adjustViewBounds="true"
+                            android:gravity="center"
+                            android:scaleType="centerInside"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+</layout>
